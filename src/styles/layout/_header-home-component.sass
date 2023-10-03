@@ -1,18 +1,22 @@
 @import "../utils/_variables"
 
+#header-container
+    display: flex
+    align-items: center
+    justify-content: center
+    position: fixed
+    height: 57px
+    background-color: $bg-header-color
+    width: 100%
+
 #logo
     display: flex
     align-items: center
-
     p
         margin-left: 15px
         color: $text-logo-color
         font-size: $text-logo-size
         font-weight: $text-logo-weight
-
-#header-container
-    display: flex
-    align-items: center
 
 #search-container
     display: flex
@@ -25,6 +29,5 @@
 
 #rainbow-color
     margin-left: 10px
-
     option
         font-size: $text-search-size
