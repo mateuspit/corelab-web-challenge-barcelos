@@ -33,7 +33,7 @@ export default function FavTasks() {
                     </div>
                 </div>
             </div>
-            <div id="fav-tasks-container">
+            {/*<div id="fav-tasks-container">
                 <div id="header-task">
                     <p id="title-task">
                         TITULO DA TASK
@@ -104,7 +104,7 @@ export default function FavTasks() {
                         <p><AiOutlineClose /></p>
                     </div>
                 </div>
-            </div>
+            </div>*/}
         </>
     )
 }
