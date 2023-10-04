@@ -1,5 +1,4 @@
 import { createContext, useState, ReactNode, Dispatch, SetStateAction } from "react";
-import PropTypes from "prop-types";
 
 interface TaskDataContextType {
     id: number;
@@ -9,17 +8,22 @@ interface TaskDataContextType {
     color: string;
 }
 
-const TasksDataContext = createContext<{
+const defaultContextValue: {
     tasksData: TaskDataContextType[];
-    settasksData: Dispatch<SetStateAction<TaskDataContextType[]>>;
-} | null>(null);
+    setTasksData: Dispatch<SetStateAction<TaskDataContextType[]>>;
+} = {
+    tasksData: [],
+    setTasksData: () => { },
+};
+
+export const TasksDataContext = createContext(defaultContextValue);
 
 export const TasksDataProvider = ({ children }: { children: ReactNode }) => {
-    const [tasksData, settasksData] = useState<TaskDataContextType[]>([]);
+    const [tasksData, setTasksData] = useState<TaskDataContextType[]>([]);
 
     const contextValue = {
         tasksData,
-        settasksData,
+        setTasksData,
     };
 
     return (
@@ -27,8 +31,4 @@ export const TasksDataProvider = ({ children }: { children: ReactNode }) => {
             {children}
         </TasksDataContext.Provider>
     );
-};
-
-TasksDataProvider.propTypes = {
-    children: PropTypes.node.isRequired,
 };

@@ -13,7 +13,8 @@ export default function Header() {
         'Laranja',
         'Cinza-claro',
         'Cinza',
-        'Marrom'];
+        'Marrom'
+    ];
 
     const [selectedColor, setSelectedColor] = useState<string>("");
     const [isFavorite, setIsFavorite] = useState<boolean>(false);
@@ -51,7 +52,7 @@ export default function Header() {
                     onChange={handleColorChange}
                     style={{ fontSize: '12px' }}
                 >
-                    <option value="">Cor da nota</option>
+                    <option value="">Sem filtro</option>
                     {colors.map((color, index) => (
                         <option key={index} value={color}>
                             {color}
