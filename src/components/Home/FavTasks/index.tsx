@@ -6,10 +6,11 @@ import { AiOutlineClose } from "react-icons/ai";
 import { useContext, useEffect } from "react";
 import { TasksDataContext } from "../../../contexts/TasksDataContext"
 import axios from "axios";
-import { BsStar } from "react-icons/bs";
+// import { BsStar } from "react-icons/bs";
 
 export default function FavTasks() {
-    const { tasksData, setTasksData } = useContext(TasksDataContext)
+    // const { tasksData, setTasksData } = useContext(TasksDataContext)
+    const { setTasksData } = useContext(TasksDataContext)
 
     useEffect(() => {
         axios.get("http://localhost:3333/api/todolists")
@@ -29,7 +30,7 @@ export default function FavTasks() {
                 <div id="header-task">
                     <p id="title-task">
                         {/* {tasksData[0].title} */}
-                        TITULO
+                        Ir ao médico
                     </p>
                     <div id="fav-icon" >
                         <BsStarFill style={{ color: 'yellow', fontSize: '20px' }} />
@@ -39,7 +40,7 @@ export default function FavTasks() {
                 <div id="task-content">
                     <p>
                         {/* {tasksData[0].text} */}
-                        TEXTO
+                        Consulta Dr. João às 16h20 na clinica More Health
                     </p>
                 </div>
                 <div id="task-footer">
